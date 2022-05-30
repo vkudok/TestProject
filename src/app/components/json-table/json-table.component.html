@@ -1,0 +1,27 @@
+<div class="table">
+  <div class="table-thead">
+    <div class="table-tr">
+      <div class="table-th" *ngFor="let headers of tableHeaderData" [sortColumn]="personInfoData" data-order="desc"
+           [attr.data-name]="headers.name">{{headers.description}}</div>
+    </div>
+    <div class="table-tr">
+      <div class="table-th" *ngFor="let headers of tableHeaderData; index as i">
+        <input class="table-input" (keypress)="getAttributeName($event)" [id]="i" type="text" [formControl]="column"
+               placeholder="Поиск">
+      </div>
+    </div>
+  </div>
+  <div class="table-tbody">
+    <div class="table-tr" *ngFor="let persons of personInfoData | search : column.value: tableHeaderData : num">
+      <div class="table-td">{{persons.lastname}}</div>
+      <div class="table-td">{{persons.firstname}}</div>
+      <div class="table-td">{{persons.patronymic}}</div>
+      <div class="table-td">{{persons.email}}</div>
+      <div class="table-td">{{persons.phone}}</div>
+      <div class="table-td">{{persons.address}}</div>
+      <div class="table-td">{{persons.birthdate | date: birthdateFormat}}</div>
+      <div class="table-td">{{persons.createdAt | date: createdAtFormat : timezone}}</div>
+    </div>
+  </div>
+</div>
+
