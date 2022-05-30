@@ -1,0 +1,52 @@
+{
+    "fields": [
+        {
+            "id": 1,
+            "name": "lastname",
+            "dataType": "TEXT",
+            "description": "Фамилия"
+        },
+        {
+            "id": 2,
+            "name": "firstname",
+            "dataType": "TEXT",
+            "description": "Имя"
+        },
+        {
+            "id": 3,
+            "name": "patronymic",
+            "dataType": "TEXT",
+            "description": "Отчество"
+        },
+        {
+            "id": 4,
+            "name": "email",
+            "dataType": "TEXT",
+            "description": "Почта"
+        },
+        {
+            "id": 5,
+            "name": "phone",
+            "dataType": "TEXT",
+            "description": "Телефон"
+        },
+        {
+            "id": 6,
+            "name": "address",
+            "dataType": "TEXT",
+            "description": "Адрес"
+        },
+        {
+            "id": 7,
+            "name": "birthdate",
+            "dataType": "DATE",
+            "description": "Дата рождения"
+        },
+        {
+            "id": 8,
+            "name": "createdAt",
+            "dataType": "DATE_TIME",
+            "description": "Дата регистрации"
+        }
+    ]
+}
