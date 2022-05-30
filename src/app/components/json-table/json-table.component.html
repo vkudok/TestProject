@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="table-tbody">
-    <div class="table-tr" *ngFor="let persons of personInfoData | search : column.value: tableHeaderData : num">
+    <div class="table-tr" *ngFor="let persons of personInfoData | search : column.value: tableHeaderData : position">
       <div class="table-td">{{persons.lastname}}</div>
       <div class="table-td">{{persons.firstname}}</div>
       <div class="table-td">{{persons.patronymic}}</div>

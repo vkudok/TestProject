@@ -18,7 +18,6 @@ export class SortDirective {
     if (order === "desc") {
       this.sortColumn.sort(sort.startSort(property, order, type));
       elem.setAttribute("data-order", "asc");
-      console.log(this.sortColumn);
     }
     else {
       this.sortColumn.sort(sort.startSort(property, order, type));

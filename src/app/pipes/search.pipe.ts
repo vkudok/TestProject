@@ -10,7 +10,7 @@ export class SearchPipe implements PipeTransform {
   constructor(private datePipe: DatePipe) {
   }
 
-  transform(list: any[], value: any, tableHeaderData: TableHeaderFields[], num: any): any {
+  transform(list: any[], value: any, tableHeaderData: TableHeaderFields[], position: any): any {
     let key: any[] = [];
     let dateForm: any;
     for (let headerName of tableHeaderData) {
@@ -18,17 +18,17 @@ export class SearchPipe implements PipeTransform {
     }
     if (value) {
       list = list.filter((item) => {
-        switch (key[num]) {
+        switch (key[position]) {
           case 'birthdate': {
-            dateForm = this.datePipe.transform(item[key[num]], birthdateFormat);
+            dateForm = this.datePipe.transform(item[key[position]], birthdateFormat);
             return (dateForm.toString().toLocaleLowerCase().indexOf(value.toString().toLocaleLowerCase()) !== -1)
           }
           case 'createdAt': {
-            dateForm = this.datePipe.transform(item[key[num]], createdAtFormat, timezone);
+            dateForm = this.datePipe.transform(item[key[position]], createdAtFormat, timezone);
             return (dateForm.toString().toLocaleLowerCase().indexOf(value.toString().toLocaleLowerCase()) !== -1)
           }
           default: {
-            return (item[key[num]].toString().toLocaleLowerCase().indexOf(value.toString().toLocaleLowerCase()) !== -1)
+            return (item[key[position]].toString().toLocaleLowerCase().indexOf(value.toString().toLocaleLowerCase()) !== -1)
           }
         }
       });

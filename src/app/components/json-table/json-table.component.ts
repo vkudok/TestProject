@@ -17,7 +17,7 @@ export class JsonTableComponent {
   createdAtFormat = createdAtFormat;
   birthdateFormat = birthdateFormat;
   timezone = timezone;
-  num: number;
+  position: number;
   prevPos: number = -1;
 
   constructor() {
@@ -29,7 +29,7 @@ export class JsonTableComponent {
     if (this.prevPos != parseInt(idAttr)) {
       this.column = new FormControl("");
     }
-    this.num = parseInt(idAttr);
+    this.position = parseInt(idAttr);
     this.prevPos = parseInt(idAttr);
   }
 }
